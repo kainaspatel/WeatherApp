@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.myapplication.activities.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_helpFragment"
+            app:destination="@id/helpFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_weatherDetailFragment"
+            app:destination="@id/weatherDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.myapplication.activities.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.myapplication.activities.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/weatherDetailFragment"
+        android:name="com.myapplication.activities.WeatherDetailFragment"
+        android:label="fragment_weather_detail"
+        tools:layout="@layout/fragment_weather_detail" >
+        <argument
+            android:name="cityname"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
